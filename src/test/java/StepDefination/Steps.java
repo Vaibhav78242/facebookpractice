@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Steps {
@@ -27,7 +28,14 @@ public void user_is_on_register_page() {
 public void user_enters_first_name_and_last_name() {
     driver.findElement(By.name("firstname")).sendKeys("vaibhav");
     driver.findElement(By.name("lastname")).sendKeys("patil");
+}  
+    @Then("user enters email and new password")
+    public void user_enters_email_and_new_password() {
+    	driver.findElement(By.name("reg_email__")).sendKeys("vaibhav123@gmail.com");
+    	driver.findElement(By.name("reg_passwd__")).sendKeys("vaibhavp123");
+      
+    }
 	
 }
 
-}
+
